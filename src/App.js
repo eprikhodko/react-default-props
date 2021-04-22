@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+// import Circle from "./Circle"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Circle circleColor="red" />
+      <Circle circleColor="orange" />
+      <Circle />
     </div>
-  );
+  )
+}
+
+const Circle = (props) => {
+  const styles = {
+      backgroundColor: props.circleColor,
+      height: 100,
+      width: 100,
+      borderRadius: props.borderRadius
+  }
+
+  return(
+      <div style={styles}></div>
+  )
+}
+
+Circle.defaultProps = {
+  circleColor: "green",
+  borderRadius: 100
 }
 
 export default App;
